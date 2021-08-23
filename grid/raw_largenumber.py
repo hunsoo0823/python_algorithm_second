@@ -13,9 +13,9 @@ second = data[1] # 두번째로 큰수
 result = 0
 
 for i in range(m):
-    if i % (k+1) == 0:
+    if i % (k+1) == 0: # k번째 이상 큰 수 더하기를 반복했을 때, 두번째 큰 수 더하기
         result += second
     else:
-        result += first
+        result += first 
 
 print(result)
