@@ -54,9 +54,3 @@ while True:
             break
 
 print(move_count)
-        
-
-            
-
-
-
