@@ -78,6 +78,7 @@ sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo bion
 sudo apt update 
 sudo apt install librealsense2-udev-rules librealsense2	librealsense2-gl librealsense2-net ros-melodic-realsense2-camera -y 
 
+"""
 echo
 echo
 echo "Intel RealSense Install and build"
@@ -171,6 +172,7 @@ cd ..
 catkin_make clean
 catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 catkin_make install
+"""
 
 echo "The system reboot in 5 seconds."
 sleep 5s
