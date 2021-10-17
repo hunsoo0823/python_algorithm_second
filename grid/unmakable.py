@@ -8,7 +8,6 @@ coin_array.sort()
 target = 1
 
 for x in coin_array:
-    print(x)
     # 만들 수 없는 금액일 때 반복 종료
     if target < x:
         break

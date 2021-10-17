@@ -23,7 +23,6 @@ a = [
     "abcabcdede",
     "abcabcabcabcdededededede",
     "xababcdcdababcdcd",
-
     'aaaaaa',
 ]
 

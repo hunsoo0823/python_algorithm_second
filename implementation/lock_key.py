@@ -1,7 +1,4 @@
 
-key = [[0,0,0], [1,0,0], [0,1,1]]
-lock = [[1,1,1], [1,1,0], [1,0,1]]
-
 # 2차원 리스트 90도 회전
 def rotate_a_matrix_by_90_degree(a):
     n = len(a)
@@ -52,6 +49,3 @@ def solution(key, lock):
                         new_lock[x+i][y+j] -= key[i][j]
 
     return False
-
-
-    

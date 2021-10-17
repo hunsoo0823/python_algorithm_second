@@ -1,34 +1,29 @@
+import heapq
+
 def solution(food_times, k):    
-    n = len(food_times) # 배열의 크기
-    time = 0 # 시간
-    count = 0 # 모든 음식을 섭취 했는지 확인할 변수
-    answer = 0 # 섭취해야 할 음식의 번호
+    # 전체 음식을 먹는 시간보다 k가 크거나 같다면 -1
+    if sum(food_times) <= k:
+        return -1
+
+    # 시간이 적은 음식부터 빼야 하므로 우선순위 큐에 삽입
+    q = []
+    for i in range(len(food_times)):
+        # (음식 시간, 음식 번호) 형태로 우선순위 큐를 이용
+        heapq.heappush(q, (food_times[i], i+1))
     
-    while True:
-        if food_times[answer] != 0:
-            food_times[answer] -= 1 # 음식 섭취
-            time += 1 # 시간 증가
-            count = 0
-            
-        
-        answer += 1
-        count += 1
-        if answer >= n: # 섭취 음식 번호가 끝자자로 넘어 갔을 떄,
-            answer = 0
-        
-        # 한바퀴를 다 돌았을 때, 더이상 먹을 수 있는 음식이 없음을 의미
-        if n < count:
-            return -1
-        
-        if time == k:
-            return answer + 1
-        
-# 먹어야할 n개의 음식, k초의 방송이 중단된 시간
-n, k = map(int, input().split())
+    sum_value = 0 # 먹기 위해 사용한 시간
+    previous = 0 # 직전에 다먹은 음식 시간
 
-# 각 음식 섭취에 필요한 시간
-food_time = list(map(int, input().split()))
+    length = len(food_times) # 남은 음식의 개수
 
-result = solution(food_time, k)
+    # sum_value + (현재 음식 시간 - 이전 음식 시간) * 현재 음식 개수와 k 비교
+    while sum_value + ((q[0][0] - previous) * length) <= k:
+        now = heapq.heappop(q)[0]
+        sum_value += (now - previous) * length
+        length -= 1 # 다 먹은 음식 제외
+        previous = now # 이전 음식 시간 재설정
 
-print(result)
+    # 남은 음식 중에서 몇 번째 음식인지 확인하며 출력
+    result = sorted(q, key=lambda x : x[1]) # 음식 번호 기준으로 정렬
+    print(result)
+    return result[(k - sum_value) % length][1]

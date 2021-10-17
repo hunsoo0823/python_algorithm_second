@@ -34,8 +34,6 @@ for C in nCr:
         min_chicken_dis = chicken_dis
 
 print(min_chicken_dis)
-    
-
 
 
 """
@@ -45,4 +43,4 @@ print(min_chicken_dis)
 0 0 0 0 0
 2 0 0 1 1
 2 2 0 1 2
-"""
+""
