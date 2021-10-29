@@ -3,7 +3,7 @@ from collections import deque
 # N * M 크기의 미로
 n, m = map(int, input().split())
 
-maze_graph = []
+maze_graph = [] 
 for _ in range(n):
     maze_graph.append(list(map(int, input())))
 
