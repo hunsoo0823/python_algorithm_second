@@ -67,8 +67,6 @@ def dfs(count):
                     corridor_graph[i][j] = 'X'
                     count -= 1    
 
-
-print(teacher)
 dfs(0)
 
 if bool_avoid == True:
