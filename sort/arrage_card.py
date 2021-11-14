@@ -21,5 +21,3 @@ while len(card_heap) != 1:
     heapq.heappush(card_heap, sum_value)
 
 print(result)
-
-print(result)
