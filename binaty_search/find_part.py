@@ -25,3 +25,4 @@ for custom in custom_list:
     else:
         print('no', end=' ')
     
+print()
