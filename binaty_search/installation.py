@@ -9,7 +9,7 @@ for i in range(n):
 house_list.sort()
 
 # 가장 작은 차이 start , 가장 큰 차이 end
-start = house_list[1] - house_list[0]
+start = 1
 end = house_list[-1] - house_list[0]
 result = 0
 
@@ -19,7 +19,7 @@ while(start <= end):
     value = house_list[0]
 
     for i in range(1, n):
-        if mid <= house_list[i] - value:
+        if house_list[i] >= mid + value:
             count += 1
             value = house_list[i]
     if count >= c:
