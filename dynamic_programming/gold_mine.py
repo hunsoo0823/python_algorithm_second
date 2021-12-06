@@ -20,9 +20,6 @@ for _ in range(int(input())):
                 ny = i + dy[k]
                 if nx >= 0 and nx < n:
                     dynamic_array[nx][ny] = max(dynamic_array[nx][ny], dynamic_array[j][i] + mine_array[nx][ny])
-
-    print(mine_array)
-
     max_num = 0
     for i in range(n):
         if max_num < dynamic_array[i][m-1]:
