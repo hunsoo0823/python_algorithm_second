@@ -17,7 +17,7 @@ for i in range(n-1, -1, -1):
     # 상담 기간 안에 끝나는 경우
     if time <= n:
         # 점화식에 맞게, 현재까지의 최고 이익 계산
-        dp[i] = max(pay_array[i] + dp[time], max_num)
+        dp[i] = max(pay_array[i] + dp[time], max_num)=
         max_num = dp[i]
     # 상담 기간을 벗어나는 경우
     else:
